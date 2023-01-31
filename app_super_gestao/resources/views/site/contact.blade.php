@@ -10,6 +10,7 @@
     <div class="informacao-pagina">
         <div class="contato-principal">
            @component('site.layout.components.form_contact')
+           <p>Iremos analisar o e-mail e retornaremos em até 24 horas!</p>
            @endcomponent
         </div>
     </div>  
