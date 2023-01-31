@@ -3,19 +3,18 @@
 @endphp
 
 @isset($fornecedores)
-
-  @php $i = 0 @endphp
-  @while(isset($fornecedores[$i]))
-    Fornecedor: {{ $fornecedores[$i]['nome']}}
+  @forelse($fornecedores as $fornecedor)
+    Fornecedor: {{ $fornecedor['nome']}}
     <br/>
-    Status: {{ $fornecedores[$i]['status'] }}
+    Status: {{ $fornecedor['status'] }}
     <br/>
-    CNPJ: {{ $fornecedores[$i]['cnpj'] ?? 'N/A'}}
+    CNPJ: {{ $fornecedor['cnpj'] ?? 'N/A'}}
     <br/>
-    Telefone: ({{ $fornecedores[$i]['ddd'] ?? ''}}) {{ $fornecedores[$i]['telefone'] ?? '' }}
-    @php $i++ @endphp
+    Telefone: ({{ $fornecedor['ddd'] ?? ''}}) {{ $fornecedor['telefone'] ?? '' }}
     <br/>
-    <br/>
-  @endwhile
+    <hr/>
+  @empty
+    Não existem fornecedores cadastrados.
+  @endforelse
 @endisset
 <br/>
