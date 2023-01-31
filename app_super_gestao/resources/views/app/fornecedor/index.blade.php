@@ -2,10 +2,39 @@
 @php
 @endphp
 
-@if(count($fornecedores) > 0 && count($fornecedores) < 10)
-  <h3>Existem alguns fornecedores cadastrados.</h3>
-@elseif(count($fornecedores) >= 10)
-  <h3>Existem muitos fornecedores cadastrados.</h3>
-@else
-  <h3>Ainda não existem fornecedores cadastrados.</h3>
-@endif
+@isset($fornecedores)
+  Fornecedor: {{ $fornecedores[0]['nome']}}
+  <br/>
+  Status: {{ $fornecedores[0]['status'] }}
+  <br/>
+  CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'N/A'}}
+  <br/>
+  Telefone: ({{ $fornecedores[0]['ddd'] ?? ''}}) {{ $fornecedores[0]['telefone'] ?? '' }}
+  @switch($fornecedores[0]['ddd'])
+    @case('11')
+      Rio Janeiro - RJ
+      @break
+    @case('12')
+      São Paulo - SP
+      @break
+  @endswitch
+@endisset
+
+<br/>
+@for($i = 0; $i < count($fornecedores); $i++)
+  {{$fornecedores[$i]['nome']}}
+  <br/>
+@endfor
+<br/>
+
+@for($i = 0; isset($fornecedores[$i]); $i++)
+  {{$fornecedores[$i]['nome']}}
+  <br/>
+@endfor
+<br/>
+
+@foreach($fornecedores as $fornecedor)
+  {{$fornecedor['nome']}}
+  <br/>
+@endforeach
+<br/>
