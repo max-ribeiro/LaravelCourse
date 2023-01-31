@@ -17,24 +17,21 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/', [MainController::class, 'show']);
-Route::get('/about', [AboutUsController::class, 'show']);
-Route::get('/contact', [ContactController::class, 'show']);
-
-Route::get('/login', function(){
-    return 'login';
-});
+Route::get('/', [MainController::class, 'show'])->name('site.index');
+Route::get('/about', [AboutUsController::class, 'show'])->name('site.about');
+Route::get('/contact', [ContactController::class, 'show'])->name('site.contact');
+Route::get('/login', function(){ return 'login' ; })->name('site.login');
 
 Route::prefix('/app')->group(function() {
     Route::get('/clientes', function(){
         return 'clientes';
-    }); 
+    })->name('app.clientes'); 
     Route::get('/fornecedores', function(){
         return 'fornecedores';
-    });
+    })->name('app.fornecedores');
     Route::get('/produtos', function(){
         return 'produtos';
-    });
+    })->name('app.produtos');
 });
 
 

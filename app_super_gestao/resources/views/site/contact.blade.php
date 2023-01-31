@@ -1,19 +1,3 @@
-<h3>Contato!</h3>
+@include('navigation') 
 
-<ul>
-    <li >
-        <a href="/">
-            Home
-        </a>
-    </li>
-    <li>
-        <a href="/contact">
-            Contato
-        </a>
-    </li>
-    <li>
-        <a href="/about">
-            Sobre
-        </a>
-    </li>
-</ul>
+<h3>Contato!</h3>
