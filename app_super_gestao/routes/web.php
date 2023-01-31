@@ -18,15 +18,34 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [MainController::class, 'show']);
-
 Route::get('/about', [AboutUsController::class, 'show']);
-
 Route::get('/contact', [ContactController::class, 'show']);
 
-Route::get('/contact/{nome}/{categoria_id}', function(
-    string $nome = '', 
-    int $categoria = 1
-) {
-    echo "Estamos aqui! {$nome}, {$categoria}";
-})->where('categoria_id', '[0-9]+')
-    ->where('nome', '[A-Za-z]+');
+Route::get('/login', function(){
+    return 'login';
+});
+
+Route::prefix('/app')->group(function() {
+    Route::get('/clientes', function(){
+        return 'clientes';
+    }); 
+    Route::get('/fornecedores', function(){
+        return 'fornecedores';
+    });
+    Route::get('/produtos', function(){
+        return 'produtos';
+    });
+});
+
+
+
+/**
+ * Route for test
+ */
+// Route::get('/contact/{nome}/{categoria_id}', function(
+//     string $nome = '', 
+//     int $categoria = 1
+// ) {
+//     echo "Estamos aqui! {$nome}, {$categoria}";
+// })->where('categoria_id', '[0-9]+')
+//     ->where('nome', '[A-Za-z]+');
