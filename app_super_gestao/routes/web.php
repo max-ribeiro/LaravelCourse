@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +34,7 @@ Route::prefix('/app')->group(function() {
     })->name('app.produtos');
 });
 
-Route::get('/rota1', function() {
-    echo "Rota 1";
-})->name('site.rota1');
-
-Route::get('/redirectto1', function() {
-    return redirect()->route('site.rota1');
-})->name('site.redirectto1');
+Route::get('/test/{p1}/{p2}', [TestController::class, 'test'])->name('site.test');
 
 Route::fallback(function() {
     echo 'rota não existe';
