@@ -42,6 +42,10 @@ Route::get('/redirectto1', function() {
     return redirect()->route('site.rota1');
 })->name('site.redirectto1');
 
+Route::fallback(function() {
+    echo 'rota não existe';
+});
+
 // Route::redirect('/rota2', '/rota1');
 /**
  * Route for test
