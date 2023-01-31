@@ -4,7 +4,6 @@
 
 @isset($fornecedores)
   @forelse($fornecedores as $fornecedor)
-    @dd($loop)
     Fornecedor: {{ $fornecedor['nome']}}
     <br/>
     Status: {{ $fornecedor['status'] }}
