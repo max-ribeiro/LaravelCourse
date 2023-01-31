@@ -19,7 +19,7 @@ class CreateSiteContactsTable extends Migration
             $table->string('name', 50);
             $table->string('tel', 20);
             $table->string('email', 80);
-            $table->integer('subject', 50);
+            $table->smallInteger('subject');
             $table->text('message');
         });
     }
