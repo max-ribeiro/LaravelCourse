@@ -34,8 +34,15 @@ Route::prefix('/app')->group(function() {
     })->name('app.produtos');
 });
 
+Route::get('/rota1', function() {
+    echo "Rota 1";
+})->name('site.rota1');
 
+Route::get('/redirectto1', function() {
+    return redirect()->route('site.rota1');
+})->name('site.redirectto1');
 
+// Route::redirect('/rota2', '/rota1');
 /**
  * Route for test
  */
