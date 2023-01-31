@@ -23,11 +23,10 @@ Route::get('/about', [AboutUsController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'show']);
 
-Route::get('/contact/{nome?}/{categoria?}/{assunto?}/{mensagem?}', function(
+Route::get('/contact/{nome}/{categoria_id}', function(
     string $nome = '', 
-    string $categoria = '', 
-    string $assunto = '', 
-    string $mensagem = ''
+    int $categoria = 1
 ) {
-    echo "Estamos aqui! {$nome}, {$categoria}, {$assunto}, {$mensagem}";
-});
+    echo "Estamos aqui! {$nome}, {$categoria}";
+})->where('categoria_id', '[0-9]+')
+    ->where('nome', '[A-Za-z]+');
