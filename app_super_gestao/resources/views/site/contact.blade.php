@@ -2,15 +2,6 @@
 @section('title', $title)
 @section('body_content')
 
-<div class="topo">
-
-    <div class="logo">
-        <img src="{{asset('img/logo.png')}}">
-    </div>
-
-    @include('navigation')
-</div>
-
 <div class="conteudo-pagina">
     <div class="titulo-pagina">
         <h1>Entre em contato conosco</h1>

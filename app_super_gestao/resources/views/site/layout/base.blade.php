@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ asset('css/default.css') }}" />
     </head>
     <body>
+        @include('site.layout.components.top')
         @yield('body_content')
         <div class="rodape">
             <div class="redes-sociais">
