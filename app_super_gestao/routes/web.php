@@ -22,3 +22,7 @@ Route::get('/', [MainController::class, 'show']);
 Route::get('/about', [AboutUsController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'show']);
+
+Route::get('/contact/{nome}/{categoria}/{assunto}/{mensagem}', function(string $nome, string $categoria, string $assunto, string $mensagem) {
+    echo "Estamos aqui! {$nome}, {$categoria}, {$assunto}, {$mensagem}";
+});

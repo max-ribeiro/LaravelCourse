@@ -5,6 +5,6 @@ namespace App\Http\Controllers;
 class AboutUsController extends Controller
 {
     public function show() {
-        echo 'About!';
+        return view('site.about');
     }
 }
