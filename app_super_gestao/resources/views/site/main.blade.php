@@ -1,4 +1,5 @@
 @extends('site.layout.base')
+@section('title', $title)
 
 @section('body_content')
 <div class="topo">
