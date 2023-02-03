@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Fornecedor extends Model
 {
     protected $table = 'fornecedores';
+
+    /**
+     * Fillable defines wich attributes of class can be edited via Fornecedor::create();
+     */
+    protected $fillable = ['nome', 'site', 'uf', 'email'];
     use HasFactory;
 }
